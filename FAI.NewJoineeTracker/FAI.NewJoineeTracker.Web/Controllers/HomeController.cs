@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FAI.NewJoineeTracker.Web.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,16 @@ namespace FAI.NewJoineeTracker.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly NewJoineeInfoService newJoineeInfoService=null;
+
+        public HomeController()
+        {
+            newJoineeInfoService = new NewJoineeInfoService();
+        }
         public ActionResult Index()
         {
-            return View();
+            var newJoineeLst = newJoineeInfoService.GetAllNewJoinees();
+            return View(newJoineeLst);
         }
 
         public ActionResult AddInfo()
