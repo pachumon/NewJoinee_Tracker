@@ -1,0 +1,43 @@
+﻿@model FAI.NewJoineeTracker.Web.Models.View.NewJoineeInfo
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row" style="margin-top:50px;text-align:center">
+    <h4>New Joinee Info</h4>
+    <div class="col-lg-6 col-lg-offset-3">
+        <table class="table table-bordered table-hover table-condensed">
+            <tr>
+                <td class="text-right">EmployeeId : </td>
+                <td>@Model.EmployeeId</td>
+            </tr>
+            <tr>
+                <td class="text-right">Name : </td>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <td class="text-right">BusinessUnit : </td>
+                <td>@Model.BusinessUnit</td>
+            </tr>
+            <tr>
+                <td class="text-right">DateOfJoining : </td>
+                <td>@Model.DateOfJoining</td>
+            </tr>
+            <tr>
+                <td class="text-right">Project : </td>
+                <td>@Model.Project</td>
+            </tr>
+            <tr>
+                <td class="text-right">Location : </td>
+                <td>@Model.Location</td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="pull-right">
+        @Html.ActionLink("<< Back", "Index", "Home",null, new { @class = "btn btn-primary" })
+    </div>
+</div>

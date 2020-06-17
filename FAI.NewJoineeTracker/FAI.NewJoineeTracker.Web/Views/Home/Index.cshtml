@@ -3,30 +3,30 @@
     ViewBag.Title = "Home Page";
 }
 @*EmployeeId=7000,Name="Johny",BusinessUnit="Direct IT",DateOfJoining=DateTime.Now.AddDays(-60),Project="Oculus",Location="Banglore", IsActive=true*@
-<div class="row" style="margin-top:50px;text-align:center">
-    <h4>New Joinee Info</h4>
-    <table class="table table-bordered table-hover" style="border:1px solid black;">
-        <tr  style="background-color:cadetblue;">
-            <th class="text-center">EmployeeId</th>
-            <th class="text-center">Name</th>
-            <th class="text-center">BusinessUnit</th>
-            <th class="text-center">DateOfJoining</th>
-            <th class="text-center">Project</th>
-            <th class="text-center">Location</th>
-        </tr>
-        @foreach (var joineeInfo in Model)
-        {
-            <tr>
-                <td>@joineeInfo.EmployeeId</td>
-                <td>@joineeInfo.Name</td>
-                <td>@joineeInfo.BusinessUnit</td>
-                <td>@joineeInfo.DateOfJoining.ToString("MM-dd-yyyy")</td>
-                <td>@joineeInfo.Project</td>
-                <td>@joineeInfo.Location</td>
+    <div class="row" style="margin-top:50px;text-align:center">
+        <h4>New Joinee Info</h4>
+        <table class="table table-bordered table-hover" style="border:1px solid black;">
+            <tr style="background-color:cadetblue;">
+                <th class="text-center">EmployeeId</th>
+                <th class="text-center">Name</th>
+                <th class="text-center">BusinessUnit</th>
+                <th class="text-center">DateOfJoining</th>
+                <th class="text-center">Project</th>
+                <th class="text-center">Location</th>
             </tr>
-        }
+            @foreach (var joineeInfo in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(joineeInfo.EmployeeId.ToString(), "Index", "Details",new {joineeId= joineeInfo.EmployeeId},null)</td>
+                    <td>@joineeInfo.Name</td>
+                    <td>@joineeInfo.BusinessUnit</td>
+                    <td>@joineeInfo.DateOfJoining.ToString("MM-dd-yyyy")</td>
+                    <td>@joineeInfo.Project</td>
+                    <td>@joineeInfo.Location</td>
+                </tr>
+            }
+        </table>
 
+        
 
-    </table>
-    
-</div>
+    </div>
