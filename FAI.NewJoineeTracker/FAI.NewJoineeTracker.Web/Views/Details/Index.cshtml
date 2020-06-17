@@ -4,8 +4,9 @@
 }
 
 <div class="row" style="margin-top:50px;text-align:center">
-    <h4>New Joinee Info</h4>
-    <div class="col-lg-6 col-lg-offset-3">
+    <div class="col-lg-6 col-lg-offset-2">
+        <h4>New Joinee Info</h4>
+
         <table class="table table-bordered table-hover table-condensed">
             <tr>
                 <td class="text-right">EmployeeId : </td>
@@ -37,7 +38,10 @@
 
 </div>
 <div class="row">
-    <div class="pull-right">
-        @Html.ActionLink("<< Back", "Index", "Home",null, new { @class = "btn btn-primary" })
+    <div class="pull-Left col-lg-3">
+        @Html.ActionLink("<< Back", "Index", "Home", null, new { @class = "btn btn-primary" })
+    </div>
+    <div class="pull-right col-lg-3">
+        @Html.ActionLink("Edit", "EditInfo", "EditActions", new { joineeId = Model.EmployeeId }, new { @class = "btn btn-primary" })
     </div>
 </div>
