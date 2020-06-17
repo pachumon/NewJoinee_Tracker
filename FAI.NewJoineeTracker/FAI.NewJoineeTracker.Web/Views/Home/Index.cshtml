@@ -16,14 +16,7 @@
             </tr>
             @foreach (var joineeInfo in Model)
             {
-                <tr>
-                    <td>@Html.ActionLink(joineeInfo.EmployeeId.ToString(), "Index", "Details",new {joineeId= joineeInfo.EmployeeId},null)</td>
-                    <td>@joineeInfo.Name</td>
-                    <td>@joineeInfo.BusinessUnit</td>
-                    <td>@joineeInfo.DateOfJoining.ToString("MM-dd-yyyy")</td>
-                    <td>@joineeInfo.Project</td>
-                    <td>@joineeInfo.Location</td>
-                </tr>
+                @Html.Partial("_TableRowRender",joineeInfo)
             }
         </table>
 

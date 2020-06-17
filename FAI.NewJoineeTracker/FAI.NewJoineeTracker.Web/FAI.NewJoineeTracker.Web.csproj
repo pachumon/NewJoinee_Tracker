@@ -169,6 +169,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Details\Index.cshtml" />
     <Content Include="Views\EditActions\EditInfo.cshtml" />
+    <Content Include="Views\Home\_TableRowRender.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

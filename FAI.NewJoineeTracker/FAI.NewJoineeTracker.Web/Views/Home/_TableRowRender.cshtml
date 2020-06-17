@@ -1,0 +1,10 @@
+﻿@model FAI.NewJoineeTracker.Web.Models.View.NewJoineeInfo
+
+<tr>
+    <td>@Html.ActionLink(Model.EmployeeId.ToString(), "Index", "Details", new { joineeId = Model.EmployeeId }, null)</td>
+    <td>@Model.Name</td>
+    <td>@Model.BusinessUnit</td>
+    <td>@Model.DateOfJoining.ToString("MM-dd-yyyy")</td>
+    <td>@Model.Project</td>
+    <td>@Model.Location</td>
+</tr>
